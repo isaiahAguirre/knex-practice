@@ -3,9 +3,10 @@
  * @returns { Promise<void> }
  */
 exports.up = function(knex) {
-    return knex.schema.createTable('pet_type', table =>{
+    return knex.schema.createTable('food_type', table =>{
         table.increments();
         table.string('name', 250);
+        table.string('description', 250);
     });
 };
 
@@ -14,5 +15,5 @@ exports.up = function(knex) {
  * @returns { Promise<void> }
  */
 exports.down = function(knex) {
-    return knex.schema.dropTableIfExists('pet_type');
+    return knex.schema.dropTableIfExists('food_type');
 };

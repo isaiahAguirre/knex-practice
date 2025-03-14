@@ -17,7 +17,8 @@ exports.up = function(knex) {
  */
 exports.down = function(knex) {
     return knex.schema.alterTable('pet', table =>{
-        table.dropForeign('pet_type_id')
+        table.dropForeign('pet_type_id');
+        
     })
     .then(function() {
         return knex.schema.dropTableIfExists('pet');
