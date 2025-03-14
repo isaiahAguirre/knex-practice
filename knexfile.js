@@ -1,5 +1,6 @@
 // Update with your config settings.
-
+require('dotenv').config()
+const connectionString = process.env.DB_CONNECTION_STRING;
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
  */
@@ -7,13 +8,7 @@ module.exports = {
 
   development: {
     client: 'postgresql',
-    connection: {
-      host:'127.0.0.1',
-      password:'docker',
-      user:'postgres',
-      port:'5432',
-      database: 'pet_store'
-    }
+    connection: connectionString,
   },
 
   staging: {
